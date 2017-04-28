@@ -1,0 +1,18 @@
+
+\definecolor{ffzzzz}{rgb}{1,0.6,0.6}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(0.16,0.49) rectangle (5.74,3.4);
+\fill[color=ffzzzz,fill=ffzzzz,fill opacity=0.1] (2,3) -- (0.52,1) -- (4.18,0.98) -- (5.28,3) -- cycle;
+\draw [color=ffzzzz] (2,3)-- (0.52,1);
+\draw [color=ffzzzz] (0.52,1)-- (4.18,0.98);
+\draw [color=ffzzzz] (4.18,0.98)-- (5.28,3);
+\draw [color=ffzzzz] (5.28,3)-- (2,3);
+\draw [->] (0.52,1) -- (4.18,0.98);
+\draw [->] (4.18,0.98) -- (5.28,3);
+\draw [->] (0.52,1) -- (5.28,3);
+\draw [->] (4.18,0.98) -- (2,3);
+\draw (4.77,2.05) node[anchor=north west] {$a$};
+\draw (2.19,1.05) node[anchor=north west] {$b$};
+\draw (1.27,2.07) node[anchor=north west] {$a + b$};
+\draw (2.54,3.05) node[anchor=north west] {$a - b$};
+\end{tikzpicture}

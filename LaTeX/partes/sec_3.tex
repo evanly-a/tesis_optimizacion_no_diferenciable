@@ -1,0 +1,117 @@
+\subsection{Métodos para optimización no diferenciable}
+
+En esta secci\'on se describir\'an los m\'etodos estudiados para la minimizaci\'on de funciones que son convexas pero no diferenciables. De 
+igual forma se dar\'an las pruebas de la convergencia de cada m\'etodo \cite{intro}.\\
+
+\subsection{M\'etodo del subgradiente}
+
+Este es el m\'etodo m\'as sencillo y es muy parecido al m\'etodo de gradiente para funciones diferenciables pero cuenta con algunas
+modificaciones \cite{intro}.\medskip
+
+\begin{enumerate}
+   \item El m\'etodo de subgradiente se aplica directamente a la funci\'on no diferenciable.
+   \item Los tamaños de paso no son elegidos por b\'usqueda lineal. En la mayor\'ia de los casos, el tamaño de paso es fijo.
+   \item A diferencia del m\'etodo de gradiente, el m\'etodo de subgradiente no es un m\'etodo de descenso; el valor de la funci\'on puede
+	 incrementar.
+\end{enumerate}
+~ \\
+
+En este caso solo se tratar\'a el problema de minimizar una funci\'on sin restricciones, es decir, minimizar $f: \mathbb{R}^n \longmapsto (0, 
++ \infty] $ donde $ f $ es convexa.\\
+El m\'etodo de subgradiente usa la iteraci\'on:
+
+\[x^{(k + 1)} = x^k - \alpha_k g^k\]
+
+$x^k: $ es el punto resultante de la $k-$\'esima iteraci\'on.\\
+$g^k: $ es cualquier subgradiente de $f $ en $x^k.$\\
+$\alpha_k > 0: $ es el $k-$\'esimo tama\~no de paso.\\ \\
+
+As\'i, en cada iteraci\'on del m\'etodo de subgradiente, se hace el paso en la direcci\'on del subgradiente negativo.\medskip
+
+Cuando la funci\'on es diferenciable, la \'unica elecci\'on posible de $g^k$ es $ \nabla f(x^k),$ y el m\'etodo del subgradiente se reduce al
+m\'etodo de gradiente (excepto por la elecci\'on del tam\~no de paso). Un problema en el m\'etodo de subgradiente es que se toma cualquier
+subgradiente en cada iteraci\'on, por lo tanto, no se toma en cuenta cual es la elecci\'on de subgradiente que hace decresec el valor de la
+funci\'on en el nuevo punto.%nava_manzo
+
+%-------------------------------------------planos de corte--------------------------------------------------------------------
+
+\subsection{M\'etodos de plano de corte}
+
+El m\'etodo del plano cortante de Kelley y Chener Goldstein se utiliza para problemas en optimizaci\'on convexa, no necesariamente 
+diferenciable. Este m\'etodo se basa en el siguiente resultado: Sea $f: \mathbb{R}^n \longmapsto \mathbb{R} $ una funci\'on convexa y 
+$x \in \mathbb{R},$ entonces:
+
+ \[f(x) = \max_{y \in \mathbb{R}^n} \{f(y) + \langle s, x - y\rangle: \, s \in \partial f(y)\}\]
+
+V\'ease la Definici\'on \ref{subgradiente} de subdiferencial.\medskip
+
+Consideremos el problema:
+
+$$\min_{x \in M} f(x)$$
+
+Asumamos que $M$ es un conjunto cerrado y que para cada $x \in M $ un subgradiente de $f $ en $x $ puede ser calculado, el m\'etodo de planos 
+de corte consiste en resolver en la $k-$\'esima iteraci\'on el problema
+
+$$\min_{x \in M} f_k(x)$$
+
+Esto es, \~la funci\'on objetivo $f $ es reemplazada por una aproximaci\'on poliedral $f_k,$ que es construida usando los puntos $x_i $ y sus
+respectivos subgradientes $s_i $ para $i = 0, 1, 2, \ldots , k - 1 $ es decir:
+
+$$f(x) = \max \{f(x_0) + \langle x - x_0 \rangle,\, f(x_1) + \langle x - x_1, s_1\rangle, \dots ,\, f(x_{k - 1}) +
+\langle x - x_{k - 1}, s_{k - 1}\rangle \}$$
+
+y $x $ minimiza $f_k $ sobre $M $ es decir
+
+$$f_k(x_k) = \min_{x \in M} f_k(x)$$
+
+
+Este problema es equivalente al problema lineal:
+
+\begin{eqnarray*}
+   \min z & & \\
+   f(x_i) + s_i(x - x_i) \leqslant z & i = 0, 1, 2, \ldots , k-1 & 
+\end{eqnarray*}
+
+El m\'etodo de planos de corte esta basado en progresivos refinamientos de aproximaciones poliedrales del epigrafo de $f.$\\ %hacer figura
+Se asume que el m\'inimo del problema de arriba puede obtenerse para todo $k. $ Para esos valores de $k $ para los cuales esto no ocurre, el 
+conjunto $M $ puede ser reemplazado por un conjunto compacto que contenga al conjunto optimal, estas restriciones son llamadas restricciones
+de caja.\\ \
+
+Cuanto m\'as planos de corte son incrementados, m\'as precisa es la aproximaci\'on. Para el caso particular de tener una funci\'on lineal por
+tramos, el m\'etodo del planos cortante converge en una cantidad finita de pasos. Un problema encontrado en \'estos m\'etods es que las 
+funciones afines en cada iteraci\'on se acrecientan dificultando la resoluci\'on del problema.%hay referencias a otros textos, pag 50 navarro
+\\ \\
+%-------------------------------------------------- gradiente proximo------------------------------------------------------------------------
+
+\subsection{M\'etodo del radiente pr\'oximo \cite{intro}}
+
+Considerar el siguiente problema \[\min h(x) = f(x) + g(x)\]
+
+Donde $f:\mathbb{R}^n \longmapsto \mathbb{R} $ y $ g: \mathbb{R}^n \longmapsto (-\infty, +\infty] $ son funciones propias, cerradas, convexas
+y $ f $ es diferenciable. En esta forma se puede partir el problema en dos, en donde una parte es diferenciable. La forma en la cual se parte 
+el problema no es \'unica y puede llevar a diferentes implementaciones del m\'etodo del gradiente pr\'oximo.\medskip
+
+El m\'etodo del gradiente pr\'oximo es:
+
+
+\begin{equation*}
+   x_{k+1} = prox_{\lambda_{kg}}(x_k - \lambda_k \nabla f(x_k))
+\end{equation*}
+
+donde $\lambda_k > 0 $ es el tama\~no de paso.\\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

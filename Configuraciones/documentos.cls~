@@ -1,0 +1,122 @@
+%Opciones de estilo del documento
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
+\ProcessOptions\relax
+\LoadClass[letterpaper,10pt]{article}
+%Opciones de estilo del documento
+
+
+
+%Paquetes de configuracion de idioma y codificacion.
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,mexico]{babel}
+%Paquetes de configuracion de idioma y codificacion.
+
+
+
+%Paquetes de los cuales dependen algunos simbolos.
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+%Paquetes de los cuales dependen algunos simbolos.
+
+
+
+
+%Pquetes y configuarcion de pdf.
+\usepackage[pdftex]{graphicx}
+%Pquetes y configuarcion de pdf.
+
+
+
+
+%Paquetes y configuraciones para imagenes.
+\usepackage{pgf,tikz}
+\usetikzlibrary{arrows}
+%Paquetes y configuraciones para imagenes.
+
+
+
+
+%Paquetes y configuraciones de estilo del docuento.
+\parindent 0cm 								% Sin sangrado
+\usepackage[margin=2.5cm]{geometry}		% Margenes
+\usepackage{array}							% Matrices
+\usepackage{enumerate}						% Listas enumeradas
+\usepackage{multicol}						% Multicolumnas
+\pagestyle{empty}								% Paginas sin numeracion
+%Paquetes y configuraciones de estilo del docuento.
+
+
+
+
+%Redefinicion de teoremas y definiciones
+\newtheorem{definicion}{{Definición}}
+\newtheorem{observacion}{{Observación}}
+\newtheorem{ejemplo}{{Ejemplo}}
+\newtheorem{teorema}{{Teorema}}
+\newtheorem{corolario}{{Corolario}}
+\newtheorem{algoritmo}{{Algoritmo}}
+%Redefinicion de teoremas y definiciones
+
+
+
+%Definicion del encabezado centrado
+\newcommand{\encabezado}{
+\begin{minipage}{2.5cm}
+	\begin{center}
+		\includegraphics[scale=.5]{../Configuraciones/minerva.jpg}
+	\end{center}
+\end{minipage}
+\begin{minipage}{11.2cm}
+	\begin{center}
+		UNIVERSIDAD DE EL SALVADOR\\
+		FACULTAD DE CIENCIAS NATURALES Y MATEMÁTICA\\
+		ESCUELA DE MATEMÁTICA\\
+		Ciudad Universitaria, \fecha
+	\end{center}
+\end{minipage}
+\begin{minipage}{2.5cm}
+	\begin{center}
+		\includegraphics[scale=.5]{../Configuraciones/minerva.jpg}
+	\end{center}
+\end{minipage}
+}
+%Definicion del encabezado centrado
+
+%Definicion del encabezado derecho
+\newcommand{\encabezadoD}{
+\begin{minipage}{2.5cm}
+	\begin{center}
+		\includegraphics[scale=.5]{../Configuraciones/minerva.jpg}
+	\end{center}
+\end{minipage}
+\begin{minipage}{14cm}
+	\begin{flushright}
+		UNIVERSIDAD DE EL SALVADOR\\
+		FACULTAD DE CIENCIAS NATURALES Y MATEMÁTICA\\
+		ESCUELA DE MATEMÁTICA\\
+		Ciudad Universitaria, \fecha
+	\end{flushright}
+\end{minipage}
+}
+%Definicion del encabezado derecho
+
+
+%Definicion del encabezado izquierdo
+\newcommand{\encabezadoI}{
+\begin{minipage}{14cm}
+	\begin{flushleft}
+		UNIVERSIDAD DE EL SALVADOR\\
+		FACULTAD DE CIENCIAS NATURALES Y MATEMÁTICA\\
+		ESCUELA DE MATEMÁTICA\\
+		Ciudad Universitaria, \fecha
+	\end{flushleft}
+\end{minipage}
+\begin{minipage}{2.5cm}
+	\begin{center}
+		\includegraphics[scale=.5]{../Configuraciones/minerva.jpg}
+	\end{center}
+\end{minipage}
+}
+%Definicion del encabezado izquierdo

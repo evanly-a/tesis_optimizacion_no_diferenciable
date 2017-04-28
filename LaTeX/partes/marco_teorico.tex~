@@ -1,0 +1,35 @@
+\section{Marco Teórico}
+\textbf{Problem 1.} Crout Factorization.
+Solve problem $6.6.21$ and implement the modified algorithm. Solve the four systems shown in problem $\sharp 6.$\\
+\\
+\
+\textbf{Solution}
+ Algorithm solves an $n x n$ system of linear equations whose coefficient matrix is tridiagonal. This
+ algorithm requires only $\left(5n-4 \right) $ multiplications/divisions and $\left(3n − 3 \riht) $ addition/subtractions.
+Consequently, it has considerable computational advantage over the methods that do not consider the
+tridiagonality of the matrix.
+
+Algorithm:
+\texttt{function x = crout(A, b)
+  x = [];
+  sizeA = size(A);
+  N = sizeA(1);
+  if sizeA(1) == N
+	 l(1,1) = A(1,1);
+	 u(1,2) = A(1,2)/l(1,1);
+	 z(1) = b(1)/l(1,1);
+	 for i = 2:1:N-1
+		l(i,i-1) = A(i,i-1);
+		l(i,i) = A(i,i) - l(i,i-1)*u(i-1,i);
+		u(i,i+1) = A(i,i+1)/l(i,i);
+		z(i) = (b(i) - l(i,i-1)*z(i-1))/l(i,i);
+	 end
+	 l(N,N-1) = A(N,N-1);
+	 l(N,N) = A(N,N) - l(N,N-1)*u(N-1,N);
+	 z(N) = (b(N) - l(N,N-1)*z(N-1))/l(N,N);
+	 x(N) = z(N);
+	 for i = N-1:-1:1
+		x(i) = z(i) - u(i,i+1)*x(i+1);
+	 end
+  end
+end}

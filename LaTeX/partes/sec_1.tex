@@ -1,0 +1,202 @@
+\section{Secci\'on I: An\'alisis convexo}
+
+\subsection{Conjuntos convexos \cite{pajardo}}
+
+A lo largo de este proyecto trabajaremos en un espacio vectorial normado real $(X*, |\cdot|)$ en 
+dualidad con su espacio dual topol\'ogico $X^*$ dotado de la norma usual:
+    \[\parallel x^*  \parallel_* := \sup_{\overset{x \in X}{ \parallel x \parallel
+                          \leqslant 1}} \langle x, x^* \rangle \] 
+                          
+donde $  \langle \cdot , \cdot \rangle$ denota el producto de dualidad entre $X$ y $X^*$, es decir para una 
+funcion lineal continua $x \in X^*$ definida sobre el espacio $X$ a valores en $\mathbb{R}$, se tiene
+$x^*: X \longmapsto \mathbb{R}$ y escribiremos 
+
+\begin{equation}
+   \langle x, x^* \rangle = x^{*}(x)\, \, \,\,\, \forall x \in X
+\end{equation}
+
+Recordemos que la topolog\'ia m\'as peque\~na en $X$ que hace continua a los elementos en $X^*$ es 
+la {\it topolog\'ia d\'ebil}. Por otro lado, dado $x \in X$ se tienen que el operador {\it 
+evaluacion} (que notaremos de igual manera) $x: X^{*} \longmapsto \mathbb{R}$ definido por
+
+$$x(x^*)= x^*(x) = \langle x, x^* \rangle$$
+
+Es lineal continuo (para la topolog\'ia inducida por $\parallel \cdot \parallel_{*}$ en $X$), por lo 
+tanto $X\subset X^{**}$. La topolog\'ia m\'as peque\~na en $X^*$ que hace ser contimuos a los 
+operadores evaluaci\'on (es decir, a los elementos de $X$) es la topolog\'ia $*-$d\'ebil.\\ \\
+
+Se tendr\'a que un espacio vectorial normado $X$ dotado de la topolog\'ia d\'ebil y su dual $X^*$ 
+dotado de la topolog\'ia $*-$d\'ebil estan en {\it dualidad} gracias al par de dualidad definido en 
+$(1)$.\\ \\
+
+{\definicion: Un conjunto $C \subset X$ se dice convexo si para todo par de puntos $x,y \in C$ se
+tiene
+$$[x,y] := \{\alpha x + (1-\alpha)y: \alpha \in [0,1]\} \subset C$$ \label{def1} }
+
+%----------------añadir imagen de un conjunto convexo y uno no convexo-------------------------
+\begin{figure}[h]
+   \centering
+   \includegraphics[scale=0.8]{./partes/convexo.jpg}
+   \caption{Conjunto convexo y no convexo}
+   \label{cyn}
+\end{figure}
+
+%--------------------fin de imagen-------------------------------------------------------------
+
+{\definicion: La suma vetorial \cite{no-lineal} 
+$$\lambda_1 x_1 + \lambda_2 x_2 + \ldots + \lambda_m x_m$$
+es llamada {\bf combinaci\'on convexa} de $x_1, x_2, \ldots , x_m$ si los coeficientes $\lambda_i$
+son no negativos y $\displaystyle \sum_{i=1}^{m} \lambda_i = 1$  \label{def2} }\\ \\
+
+% {\corolario: Sea $C \subset X$ un conjunto convexo cerrado no vac\'io del espacio vectorial
+% $X$. Entonces, $C$ es la intersecci\'on de todos los semiespacios cerrados que lo contienen, es
+% decir:
+% \[ C = \bigcap_{C \subset \mathcal{H}_{(z^{*}, \alpha)}}\mathcal{H} _{(z^{*}, \alpha)}\]
+% 
+% donde $\mathcal{H}_{(z^{*}, \alpha)} := \{x \in X\: \langle x, z^* \rangle \leqslant \alpha \}\, 
+% \mbox{para }\, z^* \in Z^* \, \mbox{y} \,\, \alpha \in \mathbb{R}$}
+% 
+% \medskip \medskip
+% 
+% {\it{\bf Demostraci\'on.}}\\
+% Denotemos por $\mathcal{F}\,$ el conjunto $X^* \times \mathbb{R}$ dado por (notar que es no vac\'io)
+% \[\mathcal{F} := \{ (z^*, \, \alpha) \in  X^* \times \mathbb{R} \: C \subset \mathcal{H} 
+% _{(z^{*}, \alpha)}\}\]
+% 
+% Claramente $\displaystyle{ C \subset \bigcap_{\mathcal{F} \subset \mathcal{H}_{(z^{*}, \alpha)}}
+% \mathcal{H}_{(z^{*}, \alpha)}}$\\ \\
+% 
+% Para probar la inclusi\'on inversa tomamos $\displaystyle{ u \in \bigcap_{\mathcal{F} \subset 
+% \mathcal{H}_{(z^{*}, \alpha)}} \mathcal{H}_{(z^{*}, \alpha)}}.$\\
+% 
+% Si $u \notin C $ utilizando el teorema (3) 
+% 
+% \begin{flushright}
+%     $\square$
+% \end{flushright}
+% 
+% \medskip
+% 
+% {\observacion Los conjuntos cerrados $ \mathcal{H}_{(z^{*}, \alpha)}$ de la proposición anterior también
+% resultan ser cerrados para la topolog\'ia d\'ebil y por lo tanto el conjunto convexo cerrado $C$ es 
+% cerrado para la topolog\'ia d\'ebil (intersecci\'on de cerrados d\'ebiles). Ası\'i, una conclusi\'on
+% importante, y que ser\'a utilizada m\'as adelante, del Corolario (\ref{cor1}), es que todo conjunto convexo cerrado
+% es tambi\'en cerrado para la topologı\'ia d\'ebil.}\\
+% \medskip
+
+%agregar corolarios que borraste
+
+{\definicion Dado un conjunto $S \subset X$ no vac\'io, diremos que la c\'apsula convexa de $S$ la cual
+denotaremos por $Co(S)$, es la intersecci\'on de todos los conjuntos convexos que contienen a $S,$ es decir:
+\[Co(S) = \bigcap_{_{S \subset T,\,\, T\, \mbox{\scriptsize convexo}}} T\] \label{cap-convx} }
+\medskip
+
+La c\'apsula convexa de un conjunto $S$, $Co(S),$ es convexa. M\'as a\'un, la c\'apsula convexa de un conjunto $S$ es el menor conjunto
+convexo que contiene a $S$.\\
+\medskip
+
+%------------ imagenes geometricas de cápsula convexa---------------------------------------------------
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale= 1.5]{./partes/capsula_conv.jpg}	
+	\caption{C\'apsula convexa}\label{capsula}
+\end{figure}\label{capsula}
+%---------------------fin de imagenes-------------------------------------------------------------------
+
+{\proposicion La c\'apsula convexa de un conjunto $C \subset X$, no vac\'io, es el conjunto de todas las
+combinaciones convexas de elementos de $C$. \label{prop1}}\\ \\
+
+% \textbf{\itshape Demostraci\'on}\\
+% Sea $D$ el conjunto de todas las combinaciones convexas de $C$, entonces $C \subset D$ por Corolario(1) $D$ 
+% es convexo, por lo tanto $C \subset Co(C) \subset D$.\\
+% Rec\'iprocamente, sea $y \in D$, esto implica que $y$ es una combinaci\'on de elementos de $C \subset Co(C)$,
+% as\'i $y$ tambi\'en es una combinaci\'on convexa de elementos de $Co(C)$, del Corolario (\ref{cor1}) se
+% tiene que $y \in Co(C)$\\ \\
+\
+
+Tambi\'en podemos definir la {\it c\'apsula af\'in} de $C$ como la colecci\'on de todas las combinaciones afines
+de puntos en $C.$ Esta es la dimensi\'on af\'in m\'as pequeña de un subespacio que contiene a $C$. Por ejemplo: 
+la c\'apsula convexa de dos puntos distintos es una recta unidimensional conteniendo estos dos puntos. Similarmente,
+la {\it c\'apsula lineal} de $C$ es la colecci\'on de todas las combinaciones lineales de puntos en $C$ \cite{no-lineal}
+
+%------------------------------imagenes de cobertura convexa--------------------------------------------------
+% \begin{figure}[h]
+% 	\centering
+% 	\includegraphics[scale= 1.5]{./partes/capsula_conv.jpg}	
+% 	\caption{C\'apsula convexa}\label{capsula}
+% \end{figure}\label{capsula}
+%-------------------------------------------------------------------------------------------------------------
+
+{\definicion:
+\begin{itemize}
+   \item La c\'apsula convexa de un n\'umero finito de puntos $x_1, x_2, \ldots ,x_{k+1} \in K$ es llamada politopo.
+   \item Si $x_1, x_2, \ldots ,x_{k}\,\,\mbox{y}\,\, x_{k+1} $ son {\itshape independiente afines}, es decir
+         que $x_2-x_1,\,x_3-x_1, \ldots , \, x_{k+1}-x_1$ son linealmente independientes, entonces la 
+         $Co(x_1, x_2, \ldots ,x_{k+1})$ es llamada un {\itshape simplex} con v\'ertives $x_1, x_2, 
+         \ldots ,x_{k+1}$
+\end{itemize}
+\label{def-poli-simplex}
+}
+
+La figura \ref{im2} nos muestra un ejemplo de un politopo y un simplex en $\mathbb{R}^n$. Note que el n\'umero
+m\'aximo de vectores linealmente independientes en $\mathbb{R}^n \,\, \mbox{es}\,\, n$ y por lo tanto no
+podr\'ia haber ning\'un simplex en $\mathbb{R}^n$ teniendo m\'as de $n+1$ v\'ertices.
+
+%------------------------------------figura de definicion anterior--------------------------------------------
+
+\begin{figure}
+   \centering
+   \input{./partes/politopo.tex}
+   \caption{Politopo y simplex}\label{figure: Politopo y Simplex}
+   \label{im2}
+\end{figure} 
+
+%-------------------------------------------------------------------------------------------------------------
+%agrega teorema que borraste
+{\corolario $C_1 \subset C_2 \Longrightarrow co(C_1) \subset co(C_2)$}\label{cor2}\\ \\
+\
+
+\textbf{Teorema de Caratheodory \cite{no-lineal}} 
+
+Por definici\'on, un punto en el conjunto de una c\'apsula convexa puede ser representado coomo una
+combinaci\'on convexa de un n\'umero finito de puntos en el conjunto. El siguiente teorema muestra 
+que cualquier punto $x$ en la c\'apsula convexa de un conjunto $C$ puede ser representado como una 
+combinaci\'on de a lo sumo $n+1$ puntos en $C$. El teorema es trivialmente cierto para $x\in C$.
+
+{\teorema: Sea $C$ un conjunto arbitrario en $\mathbb{R}^n$. Si $x \in Co(C),\,\, x \in Co(x_1, \ldots , x_{n+1})$ donde
+$x_j \in C,\,\mbox{para}\,\, j=1, \ldots , n+1.$ En otras palabras $x$ se puede representar como:
+
+\begin{eqnarray*}
+   x = \sum_{j=1}^{n+1} \lambda_j x_j\mbox{;} & x_j \in C\,\, \mbox{para}\,\, j=1, \ldots, n+1 \\  
+   \sum_{j=1}^{n+1} \lambda_j = 1\mbox{;} & \lambda_j \geqslant 0 \,\,\mbox{para}\,\, j=1, \ldots, n+1
+\end{eqnarray*}
+\label{teo-carateodory} }
+
+%\newpage
+\input{./partes/sub_sec/sec1_2.tex} %						topologia de conjuntos convexos%
+% \newpage
+\input{./partes/sub_sec/sec1_3.tex} %						topologia de conjuntos convexos
+%\newpage
+\input{./partes/sub_sec/sec1_4.tex} %						funciones convexas
+%\newpage
+\input{./partes/sub_sec/sec1_5.tex} %						subgradiente
+%\newpage
+\input{./partes/sub_sec/sec1_6.tex} %						funciones convexas diferenciables
+%\newpage
+\input{./partes/sub_sec/sec1_7.tex} %						minimo y maximo de funciones convexas
+
+%\subsection{Propiedades topol\'ogicas de los conjuntos convexos}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

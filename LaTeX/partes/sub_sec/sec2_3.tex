@@ -1,0 +1,34 @@
+\subsection{Condici\'on suficiente y necesaria para problemas con restricciones de segundo orden}
+~\\
+
+Basados en varias suposiciones de convexidad (generalizada), se tienen condiciones suficientes para garantizar que dada una soluci\'on que
+satisface las condiciones de \'optimalidad de primer orden \'esta es local o glabamente \'optima. An\'alogo al caso sin restricciones, ahora se
+sabe que la derivada de segundo orden es una condici\'on necesaria y suficiente para el problema restringido.\cite{no-lineal}\\
+Considere el problema:
+
+\begin{subequations}
+   \begin{equation}
+      P: \min \{f(x): x \in S\}
+   \end{equation}
+   \mbox{donde}
+   \begin{equation}
+      S = \{x: g_i(x) \leqslant 0\,\, \mbox{ para }\,\, i=1, \ldots , m,\,\,\, h_i(x) = 0\,\, \mbox{ para }\,\,  i=1, \ldots , l;\,\, x \in X\}
+   \end{equation}
+\end{subequations}
+
+~\medskip
+
+Asuma que $f, g_i$ para $i=1, \ldots , m $ y $ h_i $ para $ i=1, \ldots , l $ est\'an definidas en $\mathbb{R}^n \longmapsto \mathbb{R}, $ 
+ambas son diferenciables y $X$ es un conjunto abierto no vac\'io en $\mathbb{R}^n.$ La {\it funci\'on lagrangiana} para este problema se
+define como:
+
+\begin{equation}
+   \phi (x, u, v) = f(x) + \displaystyle{\sum_{i=1}^{m} u_i g_i(x) + \sum_{i=1}^{l} v_i h_i(x)}
+\end{equation}
+\medskip
+
+Esta funci\'on permite formular una teor\'ia de dualidad para problemas de programaci\'on no lineal.
+
+
+
+

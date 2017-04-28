@@ -1,0 +1,30 @@
+\documentclass[]{../Configuraciones/presentaciones}
+
+
+\usetheme{Warsaw}
+\usecolortheme{albatross}
+
+\author{Carlos Alvarez}
+\title{Creación de documentos en \LaTeX}
+
+
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+
+
+
+\begin{seccion}{Uno}
+ \begin{teorema}
+  este es un nuevo teorema
+ \end{teorema}
+
+\end{seccion}
+
+
+\end{document}
+

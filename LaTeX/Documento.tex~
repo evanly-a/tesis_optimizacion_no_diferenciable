@@ -1,0 +1,63 @@
+%Configuraciones de nuestro documento.
+\documentclass[]{../Configuraciones/documentos}
+%Configuraciones de nuestro documento.
+
+%Fecha en la que se entregara el documento
+\newcommand{\fecha}{10 de Julio de 2012}
+%Fecha en la que se entregara el documento
+
+
+%Seccion donde escribiremos el contenido de nuestro documento.
+\begin{document}
+
+\encabezadoI
+
+\textbf{Tema:} \LaTeX
+
+\textbf{Materia:}
+
+\textbf{Catedrático:}
+
+\textbf{Alumno:}
+
+\textbf{Fecha de entrega:}
+
+\newpage
+\tableofcontents
+
+
+
+
+\newpage
+\section{Introducción}
+
+\newpage
+\section{Objetivos}
+\subsection{Objetivos Generales}
+\subsection{Objetivos Específicos}
+
+\newpage
+\section{Marco Teórico}
+
+
+\newpage
+\section{Resultados}
+
+
+\newpage
+\section{Conclusiones}
+
+
+\newpage
+\section{Recomendaciones}
+
+
+\newpage
+\section{Bibliografia}
+
+
+\newpage
+\section{Anexos}
+
+\end{document}
+%Seccion donde escribiremos el contenido de nuestro documento.
