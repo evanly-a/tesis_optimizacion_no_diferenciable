@@ -1,9 +1,0 @@
-\beamer@endinputifotherversion {3.07pt}
-\select@language {spanish}
-\beamer@sectionintoc {1}{Introducci\IeC {\'o}n}{2}{0}{1}
-\beamer@sectionintoc {2}{Objetivos}{3}{0}{1}
-\beamer@sectionintoc {3}{Marco Te\IeC {\'o}rico}{4}{0}{1}
-\beamer@sectionintoc {4}{An\IeC {\'a}lisis de Resultados}{5}{0}{1}
-\beamer@sectionintoc {5}{Conclusiones}{6}{0}{1}
-\beamer@sectionintoc {6}{Bibliograf\IeC {\'\i }a}{7}{0}{1}
-\beamer@sectionintoc {7}{Referencias}{8}{0}{1}
